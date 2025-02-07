@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo Detail</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>{{ todo.title }}</h1>
+    <p>Description: {{ todo.description }}</p>
+    <p>Due Date: {{ todo.due_date }}</p>
+    <p>Status: {{ todo.status|yesno:"Completed,Not Completed" }}</p>
+    <a href="{% url 'todo_list' %}">Back to list</a>
+</body>
+</html>
