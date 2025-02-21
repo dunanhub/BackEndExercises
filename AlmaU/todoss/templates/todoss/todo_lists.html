@@ -1,0 +1,10 @@
+{% extends 'todoss/base.html' %}
+{% block content %}
+    <h1>Todo Lists</h1>
+    <form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Create</button></form>
+    <ul>
+        {% for list in lists %}
+            <li><a href="{% url 'todo_list_detail' list.id %}">{{ list.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

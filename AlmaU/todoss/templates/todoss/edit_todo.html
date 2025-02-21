@@ -1,0 +1,13 @@
+{% extends 'todoss/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-3">Edit Todo</h1>
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a href="{% url 'todo_list_detail' form.instance.todo_list.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

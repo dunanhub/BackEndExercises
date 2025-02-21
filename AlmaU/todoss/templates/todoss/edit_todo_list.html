@@ -1,0 +1,9 @@
+{% extends 'todoss/base.html' %}
+{% block content %}
+    <h1>Edit Todo List</h1>
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+{% endblock %}
